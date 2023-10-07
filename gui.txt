@@ -1,0 +1,25 @@
+# Run with virtual environment:
+- python3 -m venv env
+- source env/bin/activate
+- pip3 install -r requirements.txt
+- python3 main.py
+- access: http://127.0.0.1:8080/
+
+# Run with docker:
+- Start the Docker Desktop service
+- Create a file ".env_file"
+    JWT_SECRET='abc123abc1234'
+    LOG_LEVEL=DEBUG
+- docker build -t myimage .
+- docker run --name myContainer --env-file=.env_file -p 80:8080 myimage
+- access: http://localhost:80/
+
+# Tips:
+- docker image ls
+- docker image rm <image_id>
+- docker container ps
+- docker container stop <container_id>
+- docker container rm <container_id>
+
+# eksctl: Create EKS cluster
+# kubectl: Kubernetes command-line tool
