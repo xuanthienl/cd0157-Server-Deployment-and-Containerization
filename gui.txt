@@ -22,4 +22,13 @@
 - docker container rm <container_id>
 
 # eksctl: Create EKS cluster
+- brew tap weaveworks/tap
+- brew install weaveworks/tap/eksctl
+
 # kubectl: Kubernetes command-line tool
+- curl -LO "https://dl.k8s.io/release/v1.23.17/bin/darwin/arm64/kubectl"
+- curl -LO "https://dl.k8s.io/release/v1.23.17/bin/darwin/arm64/kubectl.sha256"
+- chmod +x ./kubectl
+- sudo mv ./kubectl /usr/local/bin/kubectl
+- sudo chown root: /usr/local/bin/kubectl
+- kubectl version --client
